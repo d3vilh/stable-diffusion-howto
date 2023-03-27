@@ -79,8 +79,6 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
 <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.1-CvitAI-RealismEngine-v2.1.png" alt="CvitAI Realism Engine page" width="800" border="1" />
 </p>
 
->**Note:** Remember the filename it will be necessary for the configuration steps.
-
 2. Then you will need to place them into the `models/Lora` directory as shown below:
    ```bash
    d3vilh@M1Prou Lora % pwd && ls -lrth realismEngine_v10*
@@ -89,6 +87,7 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
    -rw-r--r--@ 1 d3vilh  rockers   2.4G Mar 27 13:07 realismEngine_v10.safetensors
    d3vilh@M1Prou Lora %
    ```
+   >**Note:** Keep in mind the **filename** (`realismEngine_v10`), it will be necessary for the configuration steps.
 3. Once this done - you will need to **restart WebUI**, then go to the `Settings` tab and choose the model from the dropdown menu of `Extra Networks` and `Stable Diffusion Checkpoint` options, as shown on the picture below:
 <p align="center">
 <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.4-WebUI-Settings-Lora.png" alt="WebUI Settings" width="800" border="1" />
@@ -102,7 +101,7 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.2-CvitAI-Options-RE.v2.1.png" alt="CvitAI Realism Engine examples" width="800" border="1" />
    </p>
 
-   **Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture (in our case `<lora:realismEngine_v10>`).
+   **Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture. As a modelname we will use `<lora:realismEngine_v10>` where `realismEngine_v10` is a filename we keep in mind on the first step.
    In addition there are other parameters such as `CFG Scale`, `Steps`, `Sampler` and other, which you can apply to your image. 
    Here is the example of the ported settings that we used to generate the image below :
    <p align="center">
