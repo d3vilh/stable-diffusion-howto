@@ -1,8 +1,14 @@
-# stable-diffusion-mac
-Run Stable Diffusion on your M1 Mac’s GPU
-> **NOTE:** For x86/Windows/Linux follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
+# Stable Diffusion for Mac
+Run Stable Diffusion on your M1 Mac’s GPU (Intel and non-Apple PCs are also supported).
+
+* [Popular Stable Diffusion Models](#popular-stable-diffusion-models)
+* [Alternative Stable Diffusion Models](#alternative-stable-diffusion-models)
+* [LoRA Models configuration](#lora-models-configuration)
+* [Disabling the NSFW filter](#disabling-the-nsfw-filter)
+* [Performance tuning](#performance-issues)
 
 ## Installation
+   >**NOTE:** For x86/Windows/Linux follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
 1. Firts install all the dependencies via Homebrew ( Use [Brew.sh](https://brew.sh/) to install it ):
    ```bash
    brew update
@@ -38,12 +44,6 @@ Run Stable Diffusion on your M1 Mac’s GPU
 
 6. Once it's done, you can open the Web UI by going to http://localhost:7860 in your browser.
 
-### Disabling the NSFW filter
-By default, the Web UI will filter out any images that are flagged as NSFW. If you want to disable this, you can do so by adding the `--disable-safe-unpickle` flag to the `webui.sh` script:
-```bash
-./webui.sh --disable-safe-unpickle
-```
-
 ## Popular Stable Diffusion Models
 If you don't have any models to use, Stable Diffusion models can be downloaded from [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image&sort=downloads). To download, click on a model and then click on the Files and versions header. Look for files listed with the ".ckpt" or ".safetensors" extensions, and then click the down arrow to the right of the file size to download them.
 Here are most popular modules to download:
@@ -65,7 +65,7 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
    -rw-r--r--@ 1 d3vilh  rockers        1815 Mar 26 15:37 v2-1_768-ema-pruned.yaml
    d3vilh@M1Prou Stable-diffusion %
    ```
-## Alternate Stable Diffusion Models
+## Alternative Stable Diffusion Models
 **[CivitAI](https://civitai.com)** is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you will need to create an account. Once you have an account, you can download any models (including NSFW). 
  
 There are 2 types of models that can be downloaded - **Lora** and **Stable Diffusion**: 
@@ -119,6 +119,12 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
    ```
 
 7. Click `Generate` button and wait for the image to be generated.
+
+### Disabling the NSFW filter
+By default, the Web UI will filter out any images that are flagged as NSFW. If you want to disable this, you can do so by adding the `--disable-safe-unpickle` flag to the `webui.sh` script:
+```bash
+./webui.sh --disable-safe-unpickle
+```
 
 ## Performance Issues:
 
