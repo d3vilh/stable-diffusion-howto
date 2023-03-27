@@ -109,6 +109,7 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
    </p>
    
    Here is copy/paste of the `Prompts` and `Negative Prompts` from our example:
+
    **Prompts:**
    ```
    Hedgehog in Palm forest Comforting atmosphere Sunlight lighting, <lora:realismEngine_v10>
@@ -119,6 +120,10 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
    ```
 
 7. Click `Generate` button and wait for the image to be generated.
+   Here is our result:
+   <p align="center">
+   <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.5-Result-1.png" alt="Model execution result" width="800" border="1" />
+   </p>
 
 ### Disabling the NSFW filter
 By default, the Web UI will filter out any images that are flagged as NSFW. If you want to disable this, you can do so by adding the `--disable-safe-unpickle` flag to the `webui.sh` script:
