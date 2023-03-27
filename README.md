@@ -96,13 +96,15 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
 
 4. Click `Apply Settiong` and then `Reload UI` duttons to apply the changes.
 
-5. Now lets back to the realistEngine CivitAI hub page and try to generate similar images to the one that we have on the page. To do this we will need to use the `Prompts` feature. To do this we will need to copy the text from the `Prompts` section and paste it into the `Prompts` text area in the WebUI. 
-**Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture (in our case `<lora:realismEngine_v10>`).
-You can also try to use the `Negative Prompts` feature to generate images that are dissimilar to the prompt text. In addition there are other parameters you c an apply, as shown on the pictures below:
+5. Now lets back to the realistEngine CivitAI hub page and try to generate similar images to the one that we have on the page. To do this we will need to use the `Prompts` feature.
+6. Lets copy the text from the `Prompt` and `Negative Prompt` sections and paste it into the `Prompts` and `Negative Prompts` text areas in the WebUI: 
    <p align="center">
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.2-CvitAI-Options-RE.v2.1.png" alt="CvitAI Realism Engine examples" width="800" border="1" />
    </p>
 
+   **Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture (in our case `<lora:realismEngine_v10>`).
+   In addition there are other parameters such as `CFG Scale`, `Steps`, `Sampler` and other, which you can apply to your image. 
+   Here is the example of the ported settings that we used to generate the image below :
    <p align="center">
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.3-CvitAI-Headgehog-RE.v2.1.png" alt="WebUI Settings" width="800" border="1" />
    </p>
@@ -117,7 +119,7 @@ You can also try to use the `Negative Prompts` feature to generate images that a
    nrealfixer, 3d render, cgi, painting, drawing, cartoon, anime, ((blurry)), animated, cartoon, duplicate, dirty face, oversaturated, high contrast
    ```
 
-6. Click `Generate` button and wait for the image to be generated.
+7. Click `Generate` button and wait for the image to be generated.
 
 ## Performance Issues:
 
