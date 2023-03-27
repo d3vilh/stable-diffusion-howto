@@ -38,9 +38,9 @@ Run Stable Diffusion on your M1 Mac’s GPU
 6. Once it's done, you can open the Web UI by going to http://localhost:7860 in your browser.
 
 ### Disabling the NSFW filter
-By default, the Web UI will filter out any images that are flagged as NSFW. If you want to disable this, you can do so by adding the `--disable-nsfw` and `--disable-safe-unpickle` flags to the `webui.sh` script:
+By default, the Web UI will filter out any images that are flagged as NSFW. If you want to disable this, you can do so by adding the `--disable-safe-unpickle` flag to the `webui.sh` script:
 ```bash
-./webui.sh --disable-nsfw --disable-safe-unpickle
+./webui.sh --disable-safe-unpickle
 ```
 
 ## Popular Stable Diffusion Models
@@ -71,6 +71,13 @@ There are 2 types of models that can be downloaded - **Lora** and **Stable Diffu
 * **Stable Diffusion** models have `.ckpt` file extension and needs to be placed into the `models/Stable-diffusion` directory. Once this done - restart Web-UI and choose the model from the dropdown menu.
 * **Lora** models have `.safetensors` file extension and needs to be placed into the `models/Lora` directory. All the Lora models are based on main Stable Diffusion model, so you will need to download the main model as well.
 
+   ```bash
+   d3vilh@M1Prou Lora % pwd && ls -lrth realismEngine_v10*
+   /Users/d3vilh/stable-diffusion-webui/models/Lora
+   -rw-r--r--@ 1 d3vilh  rockers   1.8K Mar 27 12:32 realismEngine_v10.yaml
+   -rw-r--r--@ 1 d3vilh  rockers   2.4G Mar 27 13:07 realismEngine_v10.safetensors
+   d3vilh@M1Prou Lora %
+   ```
 
 ## Prompts and Negative Prompts
 Prompts are used to generate images that are similar to the prompt text. Negative prompts are used to generate images that are dissimilar to the prompt text. For example, to generate images that are similar to "cat" and dissimilar to "dog", you can use:
