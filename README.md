@@ -76,7 +76,7 @@ There are 2 types of models that can be downloaded - **Lora** and **Stable Diffu
 Lets have example for configuring LoRA model in the WebUI based on [realistEngine_v10 model](https://civitai.com/models/17277/realism-engine):
 1. First you need to download the model and configuration file:
 <p align="center">
-<img src="https://github.com/d3vilh/stable-diffusion-mac/blob/master/pictures/0.1-CvitAI-RealismEngine-v2.1.png" alt="OpenVPN Subnets" width="800" border="1" />
+<img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.1-CvitAI-RealismEngine-v2.1.png" alt="OpenVPN Subnets" width="800" border="1" />
 </p>
    >**Note:** Remember the filename it will be necessary for the configuration steps.
 2. Then you will need to place them into the `models/Lora` directory as shown below:
