@@ -1,4 +1,4 @@
-# Stable Diffusion for Mac
+# Stable Diffusion How-To
 Run Stable Diffusion on your M1 Mac’s GPU (Intel and non-Apple PCs are also supported).
 
 * [Popular Stable Diffusion Models](#popular-stable-diffusion-models)
@@ -8,7 +8,7 @@ Run Stable Diffusion on your M1 Mac’s GPU (Intel and non-Apple PCs are also su
 * [Performance tuning](#performance-issues)
 
 ## Installation
-   >**NOTE:** For x86/Windows/Linux follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
+   >**NOTE:** For **x86/Windows/Linux** follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
 1. Firts install all the dependencies via Homebrew ( Use [Brew.sh](https://brew.sh/) to install it ):
    ```bash
    brew update
