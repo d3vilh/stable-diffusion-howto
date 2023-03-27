@@ -1,5 +1,6 @@
 # stable-diffusion-mac
 Run Stable Diffusion on your M1 Mac’s GPU
+> **NOTE:** For x86/Windows/Linux follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
 
 ## Installation
 1. Firts install all the dependencies via Homebrew ( Use [Brew.sh](https://brew.sh/) to install it ):
@@ -65,12 +66,20 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
    d3vilh@M1Prou Stable-diffusion %
    ```
 ## Alternate Stable Diffusion Models
-[CivitAI](https://civitai.com) is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you will need to create an account. Once you have an account, you can download any models (including NSFW). 
+**[CivitAI](https://civitai.com)** is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you will need to create an account. Once you have an account, you can download any models (including NSFW). 
  
 There are 2 types of models that can be downloaded - **Lora** and **Stable Diffusion**: 
-* **Stable Diffusion** models have `.ckpt` file extension and needs to be placed into the `models/Stable-diffusion` directory. Once this done - restart Web-UI and choose the model from the dropdown menu.
-* **Lora** models have `.safetensors` file extension and needs to be placed into the `models/Lora` directory. All the Lora models are based on main Stable Diffusion model, so you will need to download the main model as well.
+* **Stable Diffusion** models have `.ckpt` file extension(TensorFlow checkpoint) and needs to be placed into the `models/Stable-diffusion` directory. Once this done - restart Web-UI and choose the model from the dropdown menu.
+* **LoRA** models (Logistic Regression with Adversarial examples) have `.safetensors` file extension (modified TensorFlow checkpoin) and needs to be placed into the `models/Lora` directory. All the LoRA models are based on main Stable Diffusion model, so you will need to download the main model as well.
 
+## LoRA Models configuration
+Lets have example for configuring LoRA model in the WebUI based on [realistEngine_v10 model](https://civitai.com/models/17277/realism-engine):
+1. First you need to download the model and configuration file:
+<p align="center">
+<img src="https://github.com/d3vilh/stable-diffusion-mac/blob/master/pictures/0.1-CvitAI-RealismEngine-v2.1.png" alt="OpenVPN Subnets" width="800" border="1" />
+</p>
+   >**Note:** Remember the filename it will be necessary for the configuration steps.
+2. Then you will need to place them into the `models/Lora` directory as shown below:
    ```bash
    d3vilh@M1Prou Lora % pwd && ls -lrth realismEngine_v10*
    /Users/d3vilh/stable-diffusion-webui/models/Lora
@@ -78,6 +87,16 @@ There are 2 types of models that can be downloaded - **Lora** and **Stable Diffu
    -rw-r--r--@ 1 d3vilh  rockers   2.4G Mar 27 13:07 realismEngine_v10.safetensors
    d3vilh@M1Prou Lora %
    ```
+3. Once this done - you will need to restart WebUI, then go to the `Settings` tab and choose the model from the dropdown menu of `Extra Networks` and `Stable Diffusion Checkpoint` options, as shown on the picture below:
+
+4. Click `Apply Settiong` and then `Reload UI` duttons to apply the changes.
+
+5. Now lets back to the realistEngine CivitAI hub page and try to generate similar images to the one that we have on the page. To do this we will need to use the `Prompts` feature. To do this we will need to copy the text from the `Prompts` section and paste it into the `Prompts` text area in the WebUI. 
+**Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture (in our case `<lora:realismEngine_v10>`).
+You can also try to use the `Negative Prompts` feature to generate images that are dissimilar to the prompt text. In addition there are other parameters you c an apply, as shown on the picture below:
+
+6. Click `Generate` button and wait for the image to be generated.
+
 
 ## Prompts and Negative Prompts
 Prompts are used to generate images that are similar to the prompt text. Negative prompts are used to generate images that are dissimilar to the prompt text. For example, to generate images that are similar to "cat" and dissimilar to "dog", you can use:
