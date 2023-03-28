@@ -45,8 +45,8 @@ Run Stable Diffusion on your M1 Mac’s GPU (Intel and non-Apple PCs are also su
 6. Once it's done, you can open the Web UI by going to http://localhost:7860 in your browser.
 
 ## Popular Stable Diffusion Models
-If you don't have any models to use, Stable Diffusion models can be downloaded from [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image&sort=downloads). To download, click on a model and then click on the Files and versions header. Look for files listed with the ".ckpt" or ".safetensors" extensions, and then click the down arrow to the right of the file size to download them.
-Here are most popular modules to download:
+Stable Diffusion models can be downloaded from [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image&sort=downloads). To download, click on a model and then click on the Files and versions header. Look for files listed with the ".ckpt" or ".safetensors" extensions, and then click the down arrow to the right of the file size to download them.
+Here are most popular models to download:
 
 [Stable DIffusion 1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4) ( [sd-v1-4.ckpt](https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/resolve/main/sd-v1-4.ckpt) )
 
@@ -60,7 +60,7 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
 
 [Stable Diffusion 2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.ckpt](https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt) )
 
-**Configuration files** for Stable Diffusion **2.0** and **2.1** needs to be put in the same directory as the model files with the same filename, but .yaml extension. For example:
+**Configuration files** for Stable Diffusion **2.0** and **2.1** needs to be in the same directory as the model files, with the same filename, but `.yaml` extension. For example:
     
    ```bash
    d3vilh@M1Prou Stable-diffusion % pwd && ls -lrt v2-1_768-ema-pruned*
@@ -70,20 +70,20 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
    d3vilh@M1Prou Stable-diffusion %
    ```
 ## Alternative Stable Diffusion Models
-**[CivitAI](https://civitai.com)** is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you will need to create an account. Once you have an account, you can download any models (including NSFW). 
+**[CivitAI](https://civitai.com)** is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you'll need to create an account. Once you have it - you can download any models (including NSFW). 
  
 There are 2 types of models that can be downloaded - **Lora** and **Stable Diffusion**: 
 * **Stable Diffusion** models have `.ckpt` file extension(TensorFlow checkpoint) and needs to be placed into the `models/Stable-diffusion` directory. Once this done - restart Web-UI and choose the model from the dropdown menu.
-* **LoRA** models (Logistic Regression with Adversarial examples) have `.safetensors` file extension (modified TensorFlow checkpoin) and needs to be placed into the `models/Lora` directory. All the LoRA models are based on main Stable Diffusion model, so you will need to download the main model as well.
+* **LoRA** models (Logistic Regression with Adversarial examples) have `.safetensors` file extension (modified TensorFlow checkpoin) and needs to be placed into the `models/Lora` directory. All the LoRA models are based on main Stable Diffusion model, in most cases you will need to download the main model as well.
 
 ## LoRA Models configuration
-Lets have example for configuring LoRA model in the WebUI based on [realistEngine_v10 model](https://civitai.com/models/17277/realism-engine):
+Lets have example for configuring LoRA model in the WebUI based on [realismEngine_v10 model](https://civitai.com/models/17277/realism-engine):
 1. First you need to download the model and configuration file (press down arrow on the `Download` button):
 <p align="center">
 <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.1-CvitAI-RealismEngine-v2.1.png" alt="CvitAI Realism Engine page" width="800" border="1" />
 </p>
 
-2. Then you will need to place them into the `models/Lora` directory as shown below:
+2. Then you will need to place both files into the `models/Lora` directory as shown below:
    ```bash
    d3vilh@M1Prou Lora % pwd && ls -lrth realismEngine_v10*
    /Users/d3vilh/stable-diffusion-webui/models/Lora
@@ -92,38 +92,38 @@ Lets have example for configuring LoRA model in the WebUI based on [realistEngin
    d3vilh@M1Prou Lora %
    ```
    >**Note:** Keep in mind the **filename** (`realismEngine_v10`), it will be necessary for the configuration steps.
-3. Once this done - you will need to **restart WebUI**, then go to the `Settings` tab and choose the model from the dropdown menu of `Extra Networks` and `Stable Diffusion Checkpoint` options, as shown on the picture below:
+3. When this done - **restart WebUI**, then go to the `Settings` tab and choose the model name from the dropdown menu of `Extra Networks` and `Stable Diffusion Checkpoint` options, as shown on the picture below:
 <p align="center">
 <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.4-WebUI-Settings-Lora.png" alt="WebUI Settings" width="800" border="1" />
 </p>
 
-4. Click `Apply Settiong` and then `Reload UI` duttons to apply the changes.
+4. Click `Apply Settings` and then `Reload UI` to apply the changes.
 
-5. Now lets back to the realistEngine CivitAI hub page and try to generate similar images to the one that we have on the page. To do this we will need to use the `Prompts` feature.
-6. Lets copy the text from the `Prompt` and `Negative Prompt` sections and paste it into the `Prompts` and `Negative Prompts` text areas in the WebUI: 
+5. Now lets back to the [realismEngine CivitAI hub page](https://civitai.com/models/17277/realism-engine) and try to generate similar images to the one that we have on the page. To do this we will use the `Prompts` feature.
+6. Copy the text from the `Prompt` and `Negative Prompt` sections of example image and paste it into the `Prompts` and `Negative Prompts` text areas in the WebUI: 
    <p align="center">
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.2-CvitAI-Options-RE.v2.1.png" alt="CvitAI Realism Engine examples" width="800" border="1" />
    </p>
 
-   **Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture. As a modelname we will use `<lora:realismEngine_v10>` where `realismEngine_v10` is a filename we keep in mind on the first step.
+   **Very important** is to use `<lora:>` tags to apply necessary LoRA model to our picture. As a modelname we will use `<lora:realismEngine_v10>` where `realismEngine_v10` is a filename we keep in mind on the first step. You can use several models at the same time, just separate them with comma `,`: `<lora:realismEngine_v10, astonMartinDBX_epoch3>`.
    In addition there are other parameters such as `CFG Scale`, `Steps`, `Sampler` and other, which you can apply to your image. 
    Here is the example of the ported settings that we used to generate the image below :
    <p align="center">
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.3-CvitAI-Headgehog-RE.v2.1.png" alt="WebUI Settings" width="800" border="1" />
    </p>
    
-   Here is copy/paste of the `Prompts` and `Negative Prompts` from our example:
+   You can copy/paste the `Prompts` and `Negative Prompts` from our example:
 
    **Prompts:**
    ```
    Hedgehog in Palm forest Comforting atmosphere Sunlight lighting, <lora:realismEngine_v10>
    ```
-   **Negatove Prompts:**
+   **Negative Prompts:**
    ```
    nrealfixer, 3d render, cgi, painting, drawing, cartoon, anime, ((blurry)), animated, cartoon, duplicate, dirty face, oversaturated, high contrast
    ```
 
-7. Click `Generate` button and wait for the image to be generated.
+7. Now lets click `Generate` button and wait for the image to be generated.
    Here is our result:
    <p align="center">
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.5-Result-1.png" alt="Model execution result" width="600" border="1" />
