@@ -168,7 +168,7 @@ Additionally, the effectiveness of these techniques can vary depending on the sp
 In the context of image generation prompts, weights can be added to accents or modifiers in the prompt to indicate how strongly the AI model should prioritize certain features. Weights are a way to indicate the relative importance or priority of different elements or characteristics in the generated image.
 
 Here are some examples of text prompts with different modifiers and weights:
-   * `A beautiful ^sunset~ over the ^ocean~` - This prompt uses accents to prioritize the words `sunset` and `ocean,` indicating that the AI model should focus on generating text that emphasizes these features.
+   * `A beautiful ^sunset over the ^ocean` - This prompt uses accents to prioritize the words `sunset` and `ocean,` indicating that the AI model should focus on generating text that emphasizes these features.
    * `The +adorable kitten+ played with the -shiny ball-` - This prompt uses modifiers to indicate that the phrase `adorable kitten` should be weighted more heavily in the output and the phrase `shiny ball` should be weighted less heavily.
    * `The !brave knight! fought the !fearsome dragon! with his +mighty sword+` - This prompt uses exclamation points to indicate that the phrases `brave knight` and `fearsome dragon` should be treated as hard constraints that must be included in the output and the phrase `mighty sword` should be weighted more heavily.
    * `house, (^red:1.5), walls, windows, door, roof.(red)` - In this prompt, the `^red` accent indicates that the color red should be given priority, and the `weight of 1.5` indicates that this is very important. The `(red)` modifier indicates that the roof should be specifically red.
@@ -182,34 +182,54 @@ So, here are more examples of text prompts with different modifiers and my expla
 ###### A prompt for generating an image of a sunset over the ocean:
 `sunset, (^ocean:1.5), sky, clouds, (orange:1.2), water.`
 In this prompt, the `^ocean` accent indicates that the ocean should be given priority, and the weight of `1.5` indicates that this is very important. The `(orange)` modifier indicates that the color orange should be added to the image, and the weight of `1.2` indicates that this is somewhat important.
-![A prompt for generating an image of a sunset over the ocean](/pictures/Examples.0.1.png) 
+
+   <p align="center">
+   <img src="/pictures/Examples.0.1.png" alt="A prompt for generating an image of a sunset over the ocean" width="512">
+   </p>
 
 ###### A prompt for generating an image of a forest with fog:
 `forest, (~fog:1.2), trees, bushes, (green:1.2)`
 In this prompt, the `~fog` accent indicates that there should be some fog in the image, and the weight of `1.2` indicates that this is somewhat important. The `(green)` modifier indicates that the image should have a green color scheme, and the weight of `1.2` indicates that this is somewhat important.
-![A prompt for generating an image of a forest with fog](/pictures/Examples.0.2.png) 
+
+   <p align="center">
+   <img src="/pictures/Examples.0.2.png" alt="A prompt for generating an image of a forest with fog" width="512">
+   </p>
 
 ###### A prompt for generating an image of a snowy mountain landscape:
 `landscape, (+snow:1.5), mountains, sky, trees, (white:1.2)`
 In this prompt, the `+snow` accent indicates that there should be snow in the image, and the weight of `1.5` indicates that this is very important. The `(white)` modifier indicates that the image should have a white color scheme, and the weight of `1.2` indicates that this is somewhat important.
-![A prompt for generating an image of a snowy mountain landscape](/pictures/Examples.0.3.png) 
+
+   <p align="center">
+   <img src="/pictures/Examples.0.3.png" alt="A prompt for generating an image of a snowy mountain landscape" width="512">
+   </p>
 
 ###### A prompt for generating an image of a desert with a cactus:
 `desert, (-water:1.2), sand, sun, (cactus), (brown:1.2)`
 In this prompt, the `-water` accent indicates that there should not be much water in the image, and the weight of `1.2` indicates that this is somewhat important. The `(cactus)` modifier indicates that there should be a cactus in the image, and the `(brown)` modifier indicates that the image should have a brown color scheme.
-![A prompt for generating an image of a desert with a cactus](/pictures/Examples.0.4.png) 
+
+   <p align="center">
+   <img src="/pictures/Examples.0.4.png" alt="A prompt for generating an image of a desert with a cactus" width="512">
+   </p>
 
 ###### A prompt for generating an image of a dog playing with a ball:
 `dog, (!playing:1.5), ball, grass, (brown:1.2)`
 In this prompt, the `!playing` accent indicates that the dog should paying, and the weight of `1.5` indicates that this is very important. The other elements in the prompt (`ball, grass, (brown:1.2)`)` are still included, but they are not as strongly prioritized as the playing dog.
-![A prompt for generating an image of a dog playing with a ball](/pictures/Examples.0.5.png) 
+
+   <p align="center">
+   <img src="/pictures/Examples.0.5.png" alt="A prompt for generating an image of a dog playing with a ball" width="512">
+   </p>
 
 ###### A prompt for generating an image of a city skyline:
 `city, (:skyline), buildings, (blue:1.2)`
 In this prompt, the `:skyline` modifier indicates that the image should focus on the city skyline. The `(blue)` modifier indicates that the image should have a blue color scheme, and the weight of `1.2` indicates that this is somewhat important.
-![A prompt for generating an image of a city skyline](/pictures/Examples.0.6.png) 
+
+   <p align="center">
+   <img src="/pictures/Examples.0.6.png" alt="A prompt for generating an image of a city skyline" width="512">
+   </p>
 
 ###### A prompt for generating an image of a flower arrangement:
 `flowers, (;arrangement), vase, (pink:1.2), (yellow:0.8)`
 This prompt includes several accents, modifiers, and a semicolon. It indicates that the model should generate images of flowers in a vase, with a slight emphasis on the arrangement of the flowers. The semicolon indicates that the feature `arrangement` is optional, so the model can generate images with or without a specific arrangement. The prompt also specifies that the vase should be included in the image. The modifier `(pink:1.2)` indicates that the model should prioritize generating images with a pink color, with a weighting of `1.2`. The modifier `(yellow:0.8)` indicates that the model should generate images with a yellow color, but with a lower priority, with a weighting of `0.8`.
-![A prompt for generating an image of a flower arrangement](/pictures/Examples.0.7.png) 
+   <p align="center">
+   <img src="/pictures/Examples.0.7.png" alt="A prompt for generating an image of a flower arrangement" width="512">
+   </p>
