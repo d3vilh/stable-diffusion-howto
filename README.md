@@ -158,7 +158,7 @@ The following modifiers can be used to adjust the weighting of specific words or
 The following punctuation marks can be used to structure and clarify text prompts:
    * `,` (comma) - separates different ideas or phrases within a sentence or prompt
    * `.` (period) - indicates the end of a sentence or idea
-   * `:` (colon) - can be used to introduce a list or to indicate that what follows is an explanation or example
+   * `:` (colon) - can be used to introduce a list or to indicate that what follows is an explanation or example. Also used for weighted modifiers.
    * `;` (semicolon) - can be used to separate related but distinct ideas within a sentence
 It's important to note that not all AI models will respond to these accents, modifiers, and punctuation in the same way. 
 
