@@ -9,7 +9,7 @@ Run Stable Diffusion on your M1 Mac’s GPU (Intel and non-Apple PCs are also su
 
 ## Installation
    >**NOTE:** For **x86/Windows/Linux** follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
-1. Firts install all the dependencies via Homebrew ( Use [Brew.sh](https://brew.sh/) to install it ):
+1. First, install all the dependencies via Homebrew ( Use [Brew.sh](https://brew.sh/) to install it ):
    ```bash
    brew update
    brew install cmake protobuf rust python@3.10 git wget curl
