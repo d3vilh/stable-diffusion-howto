@@ -136,5 +136,73 @@ By default, the Web UI will filter out any images that are flagged as NSFW. If y
 ```
 
 ## Performance Issues:
-
 Currently GPU acceleration on macOS uses a lot of memory. If performance is poor (if it takes more than a minute to generate a 512x512 image with 20 steps with any sampler) first try starting with the `--opt-split-attention-v1` command line option (i.e. `./webui.sh --opt-split-attention-v1`) and see if that helps. If that doesn't make much difference, then open the Activity Monitor application located in /Applications/Utilities and check the memory pressure graph under the Memory tab. If memory pressure is being displayed in red when an image is generated, close the web UI process and then add the `--medvram` command line option (i.e. `./webui.sh --opt-split-attention-v1 --medvram`). If performance is still poor and memory pressure still red with that option, then instead try `--lowvram` (i.e. `./webui.sh --opt-split-attention-v1 --lowvram`). If it still takes more than a few minutes to generate a 512x512 image with 20 steps with with any sampler, then you may need to turn off GPU acceleration. Open `webui-user.sh` in Xcode and change `#export COMMANDLINE_ARGS=""` to `export COMMANDLINE_ARGS="--skip-torch-cuda-test --no-half --use-cpu all"`.
+
+
+# Accents, Modifiers, and Punctuation in Text Prompts for AI Models
+[DOBF paper](https://arxiv.org/abs/2102.07492) describes how to use Prompts, Punctuation and Accents to fine-tune the model.
+Here I will share my How-to which is applicable for AUTOMATIC11111 web UI and different models.
+
+## Accents
+The following accents can be used to indicate priority and de-prioritization in a text prompt:
+   * `^` (circumflex) - indicates that a word or phrase should be prioritized
+   * `~` (tilde) - indicates that a word or phrase should be de-prioritized
+
+## Modifiers
+The following modifiers can be used to adjust the weighting of specific words or phrases in a text prompt:
+   * `+` (plus sign) - indicates that a word or phrase should be weighted more heavily in the output
+   * `-` (minus sign) - indicates that a word or phrase should be weighted less heavily in the output
+   * `!` (exclamation point) - indicates that a word or phrase should be treated as a hard constraint and must be included in the output
+
+## Punctuation
+The following punctuation marks can be used to structure and clarify text prompts:
+   * `,` (comma) - separates different ideas or phrases within a sentence or prompt
+   * `.` (period) - indicates the end of a sentence or idea
+   * `:` (colon) - can be used to introduce a list or to indicate that what follows is an explanation or example
+   * `;` (semicolon) - can be used to separate related but distinct ideas within a sentence
+It's important to note that not all AI models will respond to these accents, modifiers, and punctuation in the same way. Additionally, the effectiveness of these techniques can vary depending on the specific AI model and the complexity of the desired output. As such, it may take some trial and error to find the right combination of prompts and modifiers to generate the desired output.
+
+## Weights
+In the context of image generation prompts, weights can be added to accents or modifiers in the prompt to indicate how strongly the AI model should prioritize certain features. Weights are a way to indicate the relative importance or priority of different elements or characteristics in the generated image.
+
+Here are some examples of text prompts with different modifiers and weights:
+   * `A beautiful ^sunset~ over the ^ocean~` - This prompt uses accents to prioritize the words `sunset` and `ocean,` indicating that the AI model should focus on generating text that emphasizes these features.
+   * `The +adorable kitten+ played with the -shiny ball-` - This prompt uses modifiers to indicate that the phrase `adorable kitten` should be weighted more heavily in the output and the phrase `shiny ball` should be weighted less heavily.
+   * `The !brave knight! fought the !fearsome dragon! with his +mighty sword+` - This prompt uses exclamation points to indicate that the phrases `brave knight` and `fearsome dragon` should be treated as hard constraints that must be included in the output and the phrase `mighty sword` should be weighted more heavily.
+   * `house, (^red:1.5), walls, windows, door, roof.(red)` - In this prompt, the `^red` accent indicates that the color red should be given priority, and the `weight of 1.5` indicates that this is very important. The `(red)` modifier indicates that the roof should be specifically red.
+
+Weights can be used to fine-tune the image generation process and help the AI model better understand your desired outcome. However, it's important to use weights judiciously, as too many weights or too high weights can lead to overfitting or unrealistic results.
+
+## Examples
+Here are more examples of text prompts with different modifiers:
+
+###### A prompt for generating an image of a sunset over the ocean:
+`sunset, (^ocean:1.5), sky, clouds, (orange:1.2), water.(orange)`
+In this prompt, the `^ocean` accent indicates that the ocean should be given priority, and the weight of `1.5` indicates that this is very important. The `(orange)` modifier indicates that the color orange should be added to the image, and the weight of `1.2` indicates that this is somewhat important.
+
+###### A prompt for generating an image of a forest with fog:
+`forest, (~fog:1.2), trees, bushes, (green:1.2)`
+In this prompt, the `~fog` accent indicates that there should be some fog in the image, and the weight of `1.2` indicates that this is somewhat important. The `(green)` modifier indicates that the image should have a green color scheme, and the weight of `1.2` indicates that this is somewhat important.
+
+###### A prompt for generating an image of a snowy mountain landscape:
+`landscape, (+snow:1.5), mountains, sky, trees, (white:1.2)`
+In this prompt, the `+snow` accent indicates that there should be snow in the image, and the weight of `1.5` indicates that this is very important. The `(white)` modifier indicates that the image should have a white color scheme, and the weight of `1.2` indicates that this is somewhat important.
+
+###### A prompt for generating an image of a desert with a cactus:
+   `desert, (-water:1.2), sand, sun, (cactus), (brown:1.2)`
+   In this prompt, the `-water` accent indicates that there should not be much water in the image, and the weight of `1.2` indicates that this is somewhat important. The `(cactus)` modifier indicates that there should be a cactus in the image, and the `(brown)` modifier indicates that the image should have a brown color scheme.
+
+###### A prompt for generating an image of a dog playing with a ball:
+`dog, (!sleeping:1.5), ball, grass, (brown:1.2)`
+In this prompt, the `!sleeping` accent indicates that the dog should not be sleeping, and the weight of `1.5` indicates that this is very important. The other elements in the prompt (`ball, grass, brown`)` are still included, but they are not as strongly prioritized as the dog not sleeping.
+
+###### A prompt for generating an image of a city skyline:
+`city, (:skyline), buildings, (blue:1.2)`
+In this prompt, the `:skyline` modifier indicates that the image should focus on the city skyline. The `(blue)` modifier indicates that the image should have a blue color scheme, and the weight of `1.2` indicates that this is somewhat important.
+
+###### A prompt for generating an image of a flower arrangement:
+`flowers, (;arrangement), vase, (pink:1.2), (yellow:0.8)`
+This prompt includes several accents, modifiers, and a semicolon. It indicates that the model should generate images of flowers in a vase, with a slight emphasis on the arrangement of the flowers. The semicolon indicates that the feature `arrangement` is optional, so the model can generate images with or without a specific arrangement.
+The prompt also specifies that the vase should be included in the image. The modifier `(pink:1.2)` indicates that the model should prioritize generating images of vases with a pink color, with a weighting of `1.2`. The modifier `(yellow:0.8)` indicates that the model should generate images of vases with a yellow color, but with a lower priority, with a weighting of `0.8`.
+
+> To-do: add pictures.
