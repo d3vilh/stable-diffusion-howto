@@ -1,5 +1,5 @@
 # Stable Diffusion How-To
-Run Stable Diffusion on your M1 Mac’s GPU (Intel and non-Apple PCs are also supported).
+Run Stable Diffusion on your x86 PC or M1 Mac’s GPU.
 
 * [Popular Stable Diffusion Models](#popular-stable-diffusion-models)
 * [Alternative Stable Diffusion Models](#alternative-stable-diffusion-models)
