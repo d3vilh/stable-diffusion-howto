@@ -6,6 +6,7 @@ Run Stable Diffusion on your x86 PC or M1 Mac’s GPU.
 * [LoRA Models configuration](#lora-models-configuration)
 * [Disabling the NSFW filter](#disabling-the-nsfw-filter)
 * [Performance tuning](#performance-issues)
+* [Prompts, Accents and Modifiers guide](#accents-modifiers-and-punctuation-in-text-prompts-for-ai-models)
 
 ## Installation
    >**NOTE:** For **x86/Windows/Linux** follow installation instruction [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running).
@@ -139,22 +140,22 @@ By default, the Web UI will filter out any images that are flagged as NSFW. If y
 Currently GPU acceleration on macOS uses a lot of memory. If performance is poor (if it takes more than a minute to generate a 512x512 image with 20 steps with any sampler) first try starting with the `--opt-split-attention-v1` command line option (i.e. `./webui.sh --opt-split-attention-v1`) and see if that helps. If that doesn't make much difference, then open the Activity Monitor application located in /Applications/Utilities and check the memory pressure graph under the Memory tab. If memory pressure is being displayed in red when an image is generated, close the web UI process and then add the `--medvram` command line option (i.e. `./webui.sh --opt-split-attention-v1 --medvram`). If performance is still poor and memory pressure still red with that option, then instead try `--lowvram` (i.e. `./webui.sh --opt-split-attention-v1 --lowvram`). If it still takes more than a few minutes to generate a 512x512 image with 20 steps with with any sampler, then you may need to turn off GPU acceleration. Open `webui-user.sh` in Xcode and change `#export COMMANDLINE_ARGS=""` to `export COMMANDLINE_ARGS="--skip-torch-cuda-test --no-half --use-cpu all"`.
 
 
-# Accents, Modifiers, and Punctuation in Text Prompts for AI Models
+## Accents, Modifiers and Punctuation in Text Prompts for AI Models
 [DOBF paper](https://arxiv.org/abs/2102.07492) describes how to use Prompts, Punctuation and Accents to fine-tune the model.
 Here I will share my How-to which is applicable for AUTOMATIC11111 web UI and different models.
 
-## Accents
+### Accents
 The following accents can be used to indicate priority and de-prioritization in a text prompt:
    * `^` (circumflex) - indicates that a word or phrase should be prioritized
    * `~` (tilde) - indicates that a word or phrase should be de-prioritized
 
-## Modifiers
+### Modifiers
 The following modifiers can be used to adjust the weighting of specific words or phrases in a text prompt:
    * `+` (plus sign) - indicates that a word or phrase should be weighted more heavily in the output
    * `-` (minus sign) - indicates that a word or phrase should be weighted less heavily in the output
    * `!` (exclamation point) - indicates that a word or phrase should be treated as a hard constraint and must be included in the output
 
-## Punctuation
+### Punctuation
 The following punctuation marks can be used to structure and clarify text prompts:
    * `,` (comma) - separates different ideas or phrases within a sentence or prompt
    * `.` (period) - indicates the end of a sentence or idea
@@ -164,7 +165,7 @@ It's important to note that not all AI models will respond to these accents, mod
 
 Additionally, the effectiveness of these techniques can vary depending on the specific AI model and the complexity of the desired output. As such, it may take some trial and error to find the right combination of prompts and modifiers to generate the desired output.
 
-## Weights
+### Weights
 In the context of image generation prompts, weights can be added to accents or modifiers in the prompt to indicate how strongly the AI model should prioritize certain features. Weights are a way to indicate the relative importance or priority of different elements or characteristics in the generated image.
 
 Here are some examples of text prompts with different modifiers and weights:
@@ -175,7 +176,7 @@ Here are some examples of text prompts with different modifiers and weights:
 
 Weights can be used to fine-tune the image generation process and help the AI model better understand your desired outcome. However, it's important to use weights judiciously, as too many weights or too high weights can lead to overfitting or unrealistic results.
 
-## Examples
+### Examples
 All the examples below are based on the [Realism Engine 1.0](https://civitai.com/models/17277/realism-engine) Checkpoint model. With sampling method - `Euler A`, `20` Sampling steps and `512x512` image.  As a Negative prompts I used the following list of tags: `nrealfixer, 3d render, cgi, painting, drawing, cartoon, anime, ((blurry)), animated, cartoon, duplicate, dirty face, oversaturated, high contrast`.
 So, here are more examples of text prompts with different modifiers and my explanations:
 
