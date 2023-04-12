@@ -176,7 +176,7 @@ Here are some examples of text prompts with different modifiers and weights:
 Weights can be used to fine-tune the image generation process and help the AI model better understand your desired outcome. However, it's important to use weights judiciously, as too many weights or too high weights can lead to overfitting or unrealistic results.
 
 ## Examples
-All the examples below are based on the [Realism Engine 1.0](https://civitai.com/models/17277/realism-engine) Checkpoint model. With sampling method - `Euler A`, 20 Sampling steps and 512x512 image.  As a Negative prompts I used the following list of tags: `nrealfixer, 3d render, cgi, painting, drawing, cartoon, anime, ((blurry)), animated, cartoon, duplicate, dirty face, oversaturated, high contrast`.
+All the examples below are based on the [Realism Engine 1.0](https://civitai.com/models/17277/realism-engine) Checkpoint model. With sampling method - `Euler A`, `20` Sampling steps and `512x512` image.  As a Negative prompts I used the following list of tags: `nrealfixer, 3d render, cgi, painting, drawing, cartoon, anime, ((blurry)), animated, cartoon, duplicate, dirty face, oversaturated, high contrast`.
 So, here are more examples of text prompts with different modifiers and my explanations:
 
 ###### A prompt for generating an image of a sunset over the ocean:
