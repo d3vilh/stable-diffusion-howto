@@ -130,8 +130,10 @@ Lets have example for configuring LoRA model in the WebUI based on [realismEngin
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.5-Result-1.png" alt="Model execution result" width="600" border="1" />
    </p>
 
-### Disabling the NSFW filter
-By default, the Web UI will filter out any images that are flagged as NSFW. If you want to disable this, you can do so by adding the `--disable-safe-unpickle` flag to the `webui.sh` script:
+### Disabling the NSFW filter (disputible content)
+As per @AUTOMATIC1111 Stable-Diffusion-Web-ui [Wiki page](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings), this parameter "*disable checking pytorch models for malicious code*". Some NSFW Checkpoint models need this parameter to be enabled to run. However it is not recommended to use this parameter for any not confirmed as "100% safe models" as such models can have malicious code enabled.
+
+If you still want to disable this, you can do so by adding the `--disable-safe-unpickle` flag to the `webui.sh` script:
 ```bash
 ./webui.sh --disable-safe-unpickle
 ```
@@ -233,4 +235,8 @@ In this prompt, the `:skyline` modifier indicates that the image should focus on
 This prompt includes several accents, modifiers, and a semicolon. It indicates that the model should generate images of flowers in a vase, with a slight emphasis on the arrangement of the flowers. The semicolon indicates that the feature `arrangement` is optional, so the model can generate images with or without a specific arrangement. The prompt also specifies that the vase should be included in the image. The modifier `(pink:1.2)` indicates that the model should prioritize generating images with a pink color, with a weighting of `1.2`. The modifier `(yellow:0.8)` indicates that the model should generate images with a yellow color, but with a lower priority, with a weighting of `0.8`.
    <p align="center">
    <img src="/pictures/Examples.0.7.png" alt="A prompt for generating an image of a flower arrangement" width="512">
+   </p>
+
+   <p align="center">
+Hey Reddit! <img src="https://gelbooru.com/extras/db/db0.jpg" alt="A prompt for generating an image of a city skyline" width="8">
    </p>
