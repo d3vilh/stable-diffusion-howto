@@ -37,13 +37,21 @@ Run Stable Diffusion on your x86 PC or M1 Mac’s GPU.
    curl -Lo models/Stable-diffusion/v2-1_768-ema-pruned.yaml https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-inference-v.yaml
    ```
 
-5. Run WebUI (this will take a while the first time you run it, as it will download and compile the dependencies):
+   ###### 5.1 Stable Diffusion M1/Apple Silicon 10-25% speed improvement:
+   This will install the latest PyTorch version, which is not guaranteed to be stable. But it will give you a significant speed boost (10-25%).
+   To apply latest PyTorch - modify `webui-macos-env.sh` file in the `stable-diffusion-webui` folder.
+      * Comment out/remove the following line:
+       `export TORCH_COMMAND="pip install torch==1.12.1 torchvision==0.13.1"`
+      * and replace it with:
+       `export TORCH_COMMAND="pip install --pre torch torchvision --extra-index-url https://download.pytorch.org/whl/nightly/cpu"`
+
+6. Run WebUI (this will take a while the first time you run it, as it will download and compile the dependencies):
     ```bash
     ./webui.sh
     ```
     >**Note:** If you get an error about the script not being executable, run `chmod +x webui.sh` and try again.
 
-6. Once it's done, you can open the Web UI by going to http://localhost:7860 in your browser.
+7. Once it's done, you can open the Web UI by going to http://localhost:7860 in your browser.
 
 ## Popular Stable Diffusion Models
 Stable Diffusion models can be downloaded from [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image&sort=downloads). To download, click on a model and then click on the Files and versions header. Look for files listed with the ".ckpt" or ".safetensors" extensions, and then click the down arrow to the right of the file size to download them.
