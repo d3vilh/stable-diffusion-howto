@@ -86,7 +86,9 @@ There are 2 types of models that can be downloaded - **Lora** and **Stable Diffu
 * **LoRA** models (Logistic Regression with Adversarial examples) have `.safetensors` file extension (modified TensorFlow checkpoin) and needs to be placed into the `models/Lora` directory. All the LoRA models are based on main Stable Diffusion model, in most cases you will need to download the main model as well.
 
 ## LoRA Models configuration
-Lets have example for configuring LoRA model in the WebUI based on [realismEngine_v10 model](https://civitai.com/models/17277/realism-engine):
+Lets have example for configuring LoRA model in the WebUI based on ~~[realismEngine_v10 model](https://civitai.com/models/17277/realism-engine)~~ [DreamShaper](https://civitai.com/models/4384/dreamshaper):
+ >**Note Junly 2023:** RealismEngine model has been removed from all the open sources by unknown to me reasons.
+You can use any other models from civitai and the result will be pretty similar. Try [DreamShaper](https://civitai.com/models/4384/dreamshaper) or [AbsoluteReality](https://civitai.com/models/81458/absolutereality) or [A-Zovoya RPG](https://civitai.com/models/8124). 
 1. First you need to download the model and configuration file (press down arrow on the `Download` button):
 <p align="center">
 <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.1-CvitAI-RealismEngine-v2.1.png" alt="CvitAI Realism Engine page" width="800" border="1" />
@@ -108,7 +110,7 @@ Lets have example for configuring LoRA model in the WebUI based on [realismEngin
 
 4. Click `Apply Settings` and then `Reload UI` to apply the changes.
 
-5. Now lets back to the [realismEngine CivitAI hub page](https://civitai.com/models/17277/realism-engine) and try to generate similar images to the one that we have on the page. To do this we will use the `Prompts` feature.
+5. Now lets back to the ~~[realismEngine_v10 model](https://civitai.com/models/17277/realism-engine)~~ [DreamShaper](https://civitai.com/models/4384/dreamshaper) and try to generate similar images to the one that we have on the page. To do this we will use the `Prompts` feature.
 6. Copy the text from the `Prompt` and `Negative Prompt` sections of example image and paste it into the `Prompts` and `Negative Prompts` text areas in the WebUI: 
    <p align="center">
    <img src="https://github.com/d3vilh/stable-diffusion-mac/raw/main/pictures/0.2-CvitAI-Options-RE.v2.1.png" alt="CvitAI Realism Engine examples" width="800" border="1" />
