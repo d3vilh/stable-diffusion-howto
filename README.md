@@ -26,16 +26,13 @@ Run Stable Diffusion on your x86 PC or M1 Mac’s GPU.
    cd stable-diffusion-webui
    ```
 
-4. Download the Stable-Diffusion model. The latest and advanced one available at the moment is [version 2.1-768](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.ckpt](https://huggingface.co/stabilityai/stable-diffusion-2/resolve/main/768-v-ema.ckpt) ):
+4. Download the Stable-Diffusion model in safetensors format. The latest and advanced one available at the moment is [version 2.1-768](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-1/blob/main/v2-1_768-ema-pruned.safetensors) ):
    ```bash
-   curl -Lo models/Stable-diffusion/v2-1_768-ema-pruned.ckpt https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt
+   curl -Lo models/Stable-diffusion/v2-1_768-ema-pruned.safetensors https://huggingface.co/stabilityai/stable-diffusion-2-1/blob/main/v2-1_768-ema-pruned.safetensors
    ```
-   >**Note:** Some specific Lora models may require earlier versions, links to which can be found below.
 
-5. Download the model configuration file (applicable for **v.2.x models only**):
-   ```bash
-   curl -Lo models/Stable-diffusion/v2-1_768-ema-pruned.yaml https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-inference-v.yaml
-   ```
+   
+   >**Note:** Some specific Lora models may require earlier versions, links to which can be found below.
 
    ###### 5.1 Stable Diffusion M1/Apple Silicon 10-25% speed improvement:
    This will install the latest PyTorch version, which is not guaranteed to be stable. But it will give you a significant speed boost (10-25%).
