@@ -26,9 +26,9 @@ Run Stable Diffusion on your x86 PC or M1 Mac’s GPU.
    cd stable-diffusion-webui
    ```
 
-4. Download the Stable-Diffusion model in safetensors format. The latest and advanced one available at the moment is [version 2.1-768](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-1/blob/main/v2-1_768-ema-pruned.safetensors) ):
+4. Download the Stable-Diffusion model in safetensors format. The latest and advanced one available at the moment is [version 2.1-768](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors) ):
    ```bash
-   curl -Lo models/Stable-diffusion/v2-1_768-ema-pruned.safetensors https://huggingface.co/stabilityai/stable-diffusion-2-1/blob/main/v2-1_768-ema-pruned.safetensors
+   curl -Lo models/Stable-diffusion/v2-1_768-ema-pruned.safetensors https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors
    ```
 
    
@@ -51,7 +51,7 @@ Run Stable Diffusion on your x86 PC or M1 Mac’s GPU.
 7. Once it's done, you can open the Web UI by going to http://localhost:7860 in your browser.
 
 ## Popular Stable Diffusion Models
-Stable Diffusion models can be downloaded from [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image&sort=downloads). To download, click on a model and then click on the Files and versions header. Look for files listed with the ".ckpt" or ".safetensors" extensions, and then click the down arrow to the right of the file size to download them.
+Stable Diffusion models can be downloaded from [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image&sort=downloads). To download, click on a model and then click on the Files and versions header. Look for files listed with the ".safetensors" or ".ckpt" extensions, and then click the down arrow to the right of the file size to download them.
 Here are most popular models to download:
 
 [Stable DIffusion 1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4) ( [sd-v1-4.ckpt](https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/resolve/main/sd-v1-4.ckpt) )
@@ -62,9 +62,9 @@ Here are most popular models to download:
 
 Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration file`, and the image width & height will need to be set to **768** or higher when generating images:
 
-[Stable Diffusion 2.0](https://huggingface.co/stabilityai/stable-diffusion-2) ( [768-v-ema.ckpt](https://huggingface.co/stabilityai/stable-diffusion-2/resolve/main/768-v-ema.ckpt) )
+[Stable Diffusion 2.0](https://huggingface.co/stabilityai/stable-diffusion-2) ( [768-v-ema.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2/resolve/main/768-v-ema.safetensors) )
 
-[Stable Diffusion 2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.ckpt](https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt) )
+[Stable Diffusion 2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors) )
 
 **Configuration files** for Stable Diffusion **2.0** and **2.1** needs to be in the same directory as the model files, with the same filename, but `.yaml` extension. For example:
     
@@ -79,8 +79,8 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
 **[CivitAI](https://civitai.com)** is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you'll need to create an account. Once you have it - you can download any models (including NSFW). 
  
 There are 2 types of models that can be downloaded - **Lora** and **Stable Diffusion**: 
-* **Stable Diffusion** models have `.ckpt` file extension(TensorFlow checkpoint) and needs to be placed into the `models/Stable-diffusion` directory. Once this done - restart Web-UI and choose the model from the dropdown menu.
-* **LoRA** models (Logistic Regression with Adversarial examples) have `.safetensors` file extension (modified TensorFlow checkpoin) and needs to be placed into the `models/Lora` directory. All the LoRA models are based on main Stable Diffusion model, in most cases you will need to download the main model as well.
+* **Stable Diffusion** models have `.ckpt` (TensorFlow checkpoint) or `.safetensors` (safe .ckpt with all the scripts removed) and needs to be placed into the `models/Stable-diffusion` directory. Once this done - restart Web-UI and choose the model from the dropdown menu.
+* **LoRA** models (Logistic Regression with Adversarial examples) have most of all `.safetensors` file extension and needs to be placed into the `models/Lora` directory. All the LoRA models are based on main Stable Diffusion model, in most cases you will need to download the main model as well.
 
 ## LoRA Models configuration
 Lets have example for configuring LoRA model in the WebUI based on ~~[realismEngine_v10 model](https://civitai.com/models/17277/realism-engine)~~ [DreamShaper](https://civitai.com/models/4384/dreamshaper):
