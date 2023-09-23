@@ -66,7 +66,7 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
 
 [Stable Diffusion 2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1) ( [v2-1_768-ema-pruned.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors) )
 
-**Configuration files** for Stable Diffusion **2.0** and **2.1** needs to be in the same directory as the model files, with the same filename, but `.yaml` extension. For example:
+**Configuration files** for Stable Diffusion **2.0** and **2.1** in case you use `*.ckpt` file format needs to be in the same directory as the model files, with the same filename, but `.yaml` extension. For example:
     
    ```bash
    d3vilh@M1Prou Stable-diffusion % pwd && ls -lrt v2-1_768-ema-pruned*
@@ -75,6 +75,8 @@ Stable Diffusion **2.0** and **2.1** require both a `model` and a `configuration
    -rw-r--r--@ 1 d3vilh  rockers        1815 Mar 26 15:37 v2-1_768-ema-pruned.yaml
    d3vilh@M1Prou Stable-diffusion %
    ```
+If you are using `*.safetensors` file format - you don't need to download configuration files, just model.
+
 ## Alternative Stable Diffusion Models
 **[CivitAI](https://civitai.com)** is the most popular hub for other models that can be used with the Web UI. To have access to all the list of models, you'll need to create an account. Once you have it - you can download any models (including NSFW). 
  
