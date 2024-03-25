@@ -182,9 +182,8 @@ Weights can be used to fine-tune the image generation process and help the AI mo
 ### Prompt transformation
 Prompt transformation allow to change direction of a generation while AI is still drawing it.
 You could add content, remove content and transform content in a middle of an picture generation.
-We have a lot of control in the art genertion process.
+You have a lot of control in the picture genertion process. Prompt manipulation syntax:
 
-###### Prompt maipulation syntex:
 * `[A:B:N]` changes A to B at step N.
 * `[A:N]` adds A at step N.
 * `[B::N]` removes B at step N.
